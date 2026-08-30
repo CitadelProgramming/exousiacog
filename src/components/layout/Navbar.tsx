@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,94 +19,87 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+    <header className="bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-18 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-[#0b1d36] rounded-full flex items-center justify-center">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 md:w-11 md:h-11 bg-[#0b1d36] rounded-full flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300">
               <span className="text-white font-bold text-lg">E</span>
             </div>
             <div className="hidden sm:block">
-              <p className="font-bold text-[#0b1d36] text-lg leading-tight">
+              <p className="font-semibold text-[#0b1d36] text-[15px] leading-tight tracking-tight">
                 Exousia Church of God
               </p>
-              <p className="text-xs text-gray-500">Abuja</p>
+              <p className="text-[11px] text-slate-500 font-medium tracking-wide">
+                ABUJA
+              </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-[#c9a227] transition-colors"
+                className="px-3.5 py-2 text-[13px] font-medium text-slate-600 hover:text-[#0b1d36] transition-colors rounded-lg hover:bg-slate-50"
               >
                 {link.name}
               </Link>
             ))}
+          </nav>
+
+          {/* CTA Button */}
+          <div className="hidden lg:flex items-center">
             <Link
               href="/visit"
-              className="bg-[#0b1d36] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#132f4c] transition-colors"
+              className="group inline-flex items-center gap-2 bg-[#0b1d36] text-white text-[13px] font-medium px-5 py-2.5 rounded-full hover:bg-[#132f4c] transition-all duration-300 shadow-sm hover:shadow-md"
             >
               Plan Your Visit
+              <FiArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </Link>
-          </nav>
+          </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md text-gray-700"
+            className="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-50 transition-colors"
             aria-label="Toggle menu"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
+            {isOpen ? (
+              <HiX className="w-6 h-6" />
+            ) : (
+              <HiMenuAlt3 className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100">
-          <div className="px-4 py-4 space-y-3">
+        <div className="lg:hidden bg-white border-t border-slate-100">
+          <div className="px-4 py-5 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block text-base font-medium text-gray-700 hover:text-[#c9a227]"
+                className="block px-4 py-3 text-[15px] font-medium text-slate-700 hover:text-[#0b1d36] hover:bg-slate-50 rounded-xl transition-colors"
               >
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/visit"
-              onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-[#0b1d36] text-white px-5 py-3 rounded-full text-sm font-medium mt-4"
-            >
-              Plan Your Visit
-            </Link>
+            <div className="pt-3">
+              <Link
+                href="/visit"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-center gap-2 w-full bg-[#0b1d36] text-white text-sm font-medium px-5 py-3.5 rounded-full"
+              >
+                Plan Your Visit
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </div>
       )}
