@@ -1,25 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  /* Brand Colours */
   --primary: #3b0764;          /* Deep Purple */
   --primary-light: #4c1d95;    /* Lighter Purple */
+  --primary-dark: #2e0550;     /* Darker Purple */
   --accent: #c9a227;           /* Gold */
-  --accent-hover: #b8911f;
+  --accent-hover: #b8911f;     /* Darker Gold */
+
+  /* Neutrals */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Selection colour */
 ::selection {
-  background: #c9a227;
-  color: #3b0764;
+  background: var(--accent);
+  color: var(--primary);
+}
+
+/* Better focus styles */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Smooth image rendering */
+img {
+  max-width: 100%;
+  height: auto;
 }

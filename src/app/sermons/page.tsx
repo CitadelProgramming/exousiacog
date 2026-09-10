@@ -26,8 +26,8 @@ export default function SermonsPage() {
 
   return (
     <>
-      <section className="relative bg-[#0b1d36] text-white py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0b1d36] via-[#0f2744] to-[#0b1d36]" />
+      <section className="relative bg-[#3b0764] text-white py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#3b0764] via-[#4c1d95] to-[#3b0764]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-6">
             <HiOutlineSparkles className="w-4 h-4 text-[#c9a227]" />
@@ -36,22 +36,23 @@ export default function SermonsPage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
             Sermons & Messages
           </h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-200 text-lg max-w-2xl mx-auto leading-relaxed">
             Watch and listen to powerful messages that equip you to walk in
-            God&apos;s authority.
+            God’s authority.
           </p>
         </div>
       </section>
 
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Featured */}
           <div className="mb-16">
-            <div className="bg-[#0b1d36] rounded-3xl overflow-hidden aspect-video flex items-center justify-center max-w-4xl mx-auto relative">
-              <div className="text-center">
+            <div className="bg-[#3b0764] rounded-3xl overflow-hidden aspect-video flex items-center justify-center max-w-4xl mx-auto">
+              <div className="text-center px-6">
                 <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4">
                   <FiPlay className="w-7 h-7 text-[#c9a227]" />
                 </div>
-                <p className="text-white/70 font-medium mb-1">
+                <p className="text-white/80 font-medium mb-1">
                   Featured Sermon
                 </p>
                 <p className="text-white/40 text-sm mb-6">
@@ -61,7 +62,7 @@ export default function SermonsPage() {
                   href="https://www.youtube.com/@exousiachurchofgodabuja5042"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#c9a227] text-[#0b1d36] font-semibold px-6 py-3 rounded-full text-sm hover:bg-[#b8911f] transition-colors"
+                  className="inline-flex items-center gap-2 bg-[#c9a227] text-[#3b0764] font-semibold px-6 py-3 rounded-full text-sm hover:bg-[#b8911f] transition-colors"
                 >
                   Watch on YouTube <FiExternalLink className="w-4 h-4" />
                 </a>
@@ -69,20 +70,21 @@ export default function SermonsPage() {
             </div>
           </div>
 
+          {/* Sermon Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {sermons.map((sermon) => (
               <div
                 key={sermon.id}
                 className="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:shadow-lg transition-all duration-300"
               >
-                <div className="bg-[#0b1d36] h-48 flex items-center justify-center relative">
+                <div className="bg-[#3b0764] h-48 flex items-center justify-center">
                   <FiPlay className="w-10 h-10 text-white/30 group-hover:text-[#c9a227] transition-colors" />
                 </div>
                 <div className="p-6">
                   <p className="text-xs font-semibold text-[#c9a227] tracking-wider uppercase mb-2">
                     {sermon.date}
                   </p>
-                  <h3 className="text-lg font-bold text-[#0b1d36] mb-1">
+                  <h3 className="text-lg font-bold text-[#3b0764] mb-1">
                     {sermon.title}
                   </h3>
                   <p className="text-sm text-slate-500 mb-5">
@@ -92,7 +94,7 @@ export default function SermonsPage() {
                     href="https://www.youtube.com/@exousiachurchofgodabuja5042"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0b1d36] hover:text-[#c9a227] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[#3b0764] hover:text-[#c9a227] transition-colors"
                   >
                     Watch Message <FiArrowRight className="w-3.5 h-3.5" />
                   </a>
@@ -105,18 +107,18 @@ export default function SermonsPage() {
 
       <section className="py-20 md:py-24 bg-slate-50">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-[#0b1d36] tracking-tight mb-4">
-            More on YouTube
+          <h2 className="text-3xl font-bold text-[#3b0764] tracking-tight mb-4">
+            More Messages on YouTube
           </h2>
           <p className="text-slate-600 mb-8">
-            Subscribe to our channel for full services, teachings, and special
+            Subscribe to our channel for full services, teachings and special
             programs.
           </p>
           <a
             href="https://www.youtube.com/@exousiachurchofgodabuja5042"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#0b1d36] text-white font-medium px-8 py-4 rounded-full hover:bg-[#132f4c] transition-all"
+            className="inline-flex items-center gap-2 bg-[#3b0764] text-white font-medium px-8 py-4 rounded-full hover:bg-[#4c1d95] transition-all"
           >
             Visit YouTube Channel <FiExternalLink className="w-4 h-4" />
           </a>

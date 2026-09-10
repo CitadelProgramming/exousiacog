@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { FiArrowRight, FiCalendar, FiMapPin, FiClock } from "react-icons/fi";
+import {
+  FiArrowRight,
+  FiCalendar,
+  FiMapPin,
+  FiClock,
+  FiMonitor,
+} from "react-icons/fi";
 import { HiOutlineSparkles } from "react-icons/hi2";
 
 export default function EventsPage() {
@@ -8,29 +14,33 @@ export default function EventsPage() {
       id: 1,
       title: "Sunday Service",
       date: "Every Sunday",
-      time: "Time to be confirmed",
+      time: "Pre-service 8:30 AM • Main Service 9:00 – 11:30 AM",
+      location: "Mabushi, Abuja (Onsite)",
       type: "Weekly",
     },
     {
       id: 2,
       title: "Wednesday Bible Teaching",
       date: "Every Wednesday",
-      time: "Time to be confirmed",
+      time: "5:30 PM",
+      location: "Online on Facebook",
       type: "Weekly",
+      online: true,
     },
     {
       id: 3,
       title: "Friday Prayer Service",
       date: "Every Friday",
-      time: "Time to be confirmed",
+      time: "5:30 PM",
+      location: "Mabushi, Abuja (Onsite)",
       type: "Weekly",
     },
   ];
 
   return (
     <>
-      <section className="relative bg-[#0b1d36] text-white py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0b1d36] via-[#0f2744] to-[#0b1d36]" />
+      <section className="relative bg-[#3b0764] text-white py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#3b0764] via-[#4c1d95] to-[#3b0764]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-6">
             <HiOutlineSparkles className="w-4 h-4 text-[#c9a227]" />
@@ -41,9 +51,9 @@ export default function EventsPage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
             Events & Programs
           </h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
-            Stay connected with upcoming services, special programs, and
-            gatherings.
+          <p className="text-slate-200 text-lg max-w-2xl mx-auto leading-relaxed">
+            Stay connected with our weekly services and upcoming special
+            programs.
           </p>
         </div>
       </section>
@@ -56,7 +66,7 @@ export default function EventsPage() {
                 key={event.id}
                 className="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden hover:shadow-lg transition-all duration-300"
               >
-                <div className="bg-[#0b1d36] px-6 py-5">
+                <div className="bg-[#3b0764] px-6 py-5">
                   <span className="inline-block text-xs font-semibold tracking-wide text-[#c9a227] bg-[#c9a227]/10 px-3 py-1 rounded-full mb-3">
                     {event.type}
                   </span>
@@ -64,23 +74,29 @@ export default function EventsPage() {
                     {event.title}
                   </h3>
                 </div>
+
                 <div className="p-6 space-y-3">
-                  <div className="flex items-center gap-3 text-sm text-slate-600">
-                    <FiCalendar className="w-4 h-4 text-[#c9a227]" />
-                    {event.date}
+                  <div className="flex items-start gap-3 text-sm text-slate-600">
+                    <FiCalendar className="w-4 h-4 text-[#c9a227] mt-0.5 flex-shrink-0" />
+                    <span>{event.date}</span>
                   </div>
-                  <div className="flex items-center gap-3 text-sm text-slate-600">
-                    <FiClock className="w-4 h-4 text-[#c9a227]" />
-                    {event.time}
+                  <div className="flex items-start gap-3 text-sm text-slate-600">
+                    <FiClock className="w-4 h-4 text-[#c9a227] mt-0.5 flex-shrink-0" />
+                    <span>{event.time}</span>
                   </div>
-                  <div className="flex items-center gap-3 text-sm text-slate-600">
-                    <FiMapPin className="w-4 h-4 text-[#c9a227]" />
-                    Mabushi, Abuja
+                  <div className="flex items-start gap-3 text-sm text-slate-600">
+                    {event.online ? (
+                      <FiMonitor className="w-4 h-4 text-[#c9a227] mt-0.5 flex-shrink-0" />
+                    ) : (
+                      <FiMapPin className="w-4 h-4 text-[#c9a227] mt-0.5 flex-shrink-0" />
+                    )}
+                    <span>{event.location}</span>
                   </div>
+
                   <div className="pt-4">
                     <Link
                       href="/visit"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0b1d36] hover:text-[#c9a227] transition-colors"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-[#3b0764] hover:text-[#c9a227] transition-colors"
                     >
                       Plan to Attend <FiArrowRight className="w-3.5 h-3.5" />
                     </Link>
@@ -94,16 +110,16 @@ export default function EventsPage() {
 
       <section className="py-20 md:py-24 bg-slate-50">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-[#0b1d36] tracking-tight mb-4">
+          <h2 className="text-3xl font-bold text-[#3b0764] tracking-tight mb-4">
             Special Programs
           </h2>
           <p className="text-slate-600 mb-8">
-            Special services, conferences, and celebrations will be announced
-            here.
+            Special services, conferences and celebrations will be announced
+            here as they are scheduled.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-[#0b1d36] text-white font-medium px-8 py-4 rounded-full hover:bg-[#132f4c] transition-all"
+            className="inline-flex items-center gap-2 bg-[#3b0764] text-white font-medium px-8 py-4 rounded-full hover:bg-[#4c1d95] transition-all"
           >
             Stay Connected
           </Link>

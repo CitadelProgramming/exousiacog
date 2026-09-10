@@ -6,14 +6,16 @@ import {
   FiUsers,
   FiBookOpen,
   FiHeart,
+  FiMonitor,
 } from "react-icons/fi";
 import { HiOutlineSparkles } from "react-icons/hi2";
 
 export default function ServicesPage() {
   return (
     <>
-      <section className="relative bg-[#0b1d36] text-white py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0b1d36] via-[#0f2744] to-[#0b1d36]" />
+      {/* Hero */}
+      <section className="relative bg-[#3b0764] text-white py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#3b0764] via-[#4c1d95] to-[#3b0764]" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#c9a227]/10 rounded-full blur-3xl" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-6">
@@ -25,65 +27,110 @@ export default function ServicesPage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
             Service Times & Location
           </h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-200 text-lg max-w-2xl mx-auto leading-relaxed">
             Join us as we gather to worship, receive the Word, and grow together
-            in the presence of God.
+            under God’s authority.
           </p>
         </div>
       </section>
 
+      {/* Weekly Services */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0b1d36] tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#3b0764] tracking-tight mb-4">
               Weekly Services
             </h2>
             <p className="text-slate-600 max-w-xl mx-auto">
-              We gather several times a week. Everyone is welcome.
+              Dedicated, vibrant and Spirit-filled services every week.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {[
-              {
-                day: "Sunday",
-                title: "Sunday Service",
-                desc: "Our main worship service filled with powerful praise, the Word of God, and the presence of the Holy Spirit.",
-              },
-              {
-                day: "Wednesday",
-                title: "Bible Teaching",
-                desc: "Midweek teaching where we dig deeper into the Word of God for growth, understanding, and transformation.",
-              },
-              {
-                day: "Friday",
-                title: "Prayer Service",
-                desc: "A powerful time of corporate prayer, intercession, and seeking the face of God together.",
-              },
-            ].map((item) => (
-              <div
-                key={item.day}
-                className="group relative bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-[#c9a227]/30 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="absolute top-0 left-8 w-12 h-1 bg-[#c9a227] rounded-b-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-xs font-semibold tracking-widest text-[#c9a227] uppercase mb-4">
-                  {item.day}
-                </p>
-                <h3 className="text-xl font-bold text-[#0b1d36] mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                  {item.desc}
-                </p>
-                <p className="text-sm font-medium text-slate-500 flex items-center gap-2">
-                  <FiClock className="w-4 h-4" /> Time to be confirmed
-                </p>
+            {/* Sunday */}
+            <div className="group relative bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-[#c9a227]/40 hover:shadow-lg transition-all duration-300">
+              <div className="absolute top-0 left-8 w-12 h-1 bg-[#c9a227] rounded-b-full opacity-0 group-hover:opacity-100 transition-opacity" />
+              <p className="text-xs font-semibold tracking-widest text-[#c9a227] uppercase mb-4">
+                Sunday
+              </p>
+              <h3 className="text-xl font-bold text-[#3b0764] mb-4">
+                Sunday Service
+              </h3>
+
+              <div className="space-y-3 mb-6">
+                <div className="flex items-start gap-3">
+                  <FiClock className="w-4 h-4 text-[#c9a227] mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-sm font-medium text-[#3b0764]">
+                      Pre-service Teaching
+                    </p>
+                    <p className="text-sm text-slate-600">8:30 AM</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <FiClock className="w-4 h-4 text-[#c9a227] mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-sm font-medium text-[#3b0764]">
+                      Main Service
+                    </p>
+                    <p className="text-sm text-slate-600">9:00 AM – 11:30 AM</p>
+                  </div>
+                </div>
               </div>
-            ))}
+              <p className="text-sm text-slate-500">Onsite • Mabushi, Abuja</p>
+            </div>
+
+            {/* Wednesday */}
+            <div className="group relative bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-[#c9a227]/40 hover:shadow-lg transition-all duration-300">
+              <div className="absolute top-0 left-8 w-12 h-1 bg-[#c9a227] rounded-b-full opacity-0 group-hover:opacity-100 transition-opacity" />
+              <p className="text-xs font-semibold tracking-widest text-[#c9a227] uppercase mb-4">
+                Wednesday
+              </p>
+              <h3 className="text-xl font-bold text-[#3b0764] mb-4">
+                Bible Teaching
+              </h3>
+
+              <div className="flex items-start gap-3 mb-6">
+                <FiClock className="w-4 h-4 text-[#c9a227] mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-medium text-[#3b0764]">
+                    Service Time
+                  </p>
+                  <p className="text-sm text-slate-600">5:30 PM</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-slate-500">
+                <FiMonitor className="w-4 h-4" />
+                Online on our Facebook page
+              </div>
+            </div>
+
+            {/* Friday */}
+            <div className="group relative bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-[#c9a227]/40 hover:shadow-lg transition-all duration-300">
+              <div className="absolute top-0 left-8 w-12 h-1 bg-[#c9a227] rounded-b-full opacity-0 group-hover:opacity-100 transition-opacity" />
+              <p className="text-xs font-semibold tracking-widest text-[#c9a227] uppercase mb-4">
+                Friday
+              </p>
+              <h3 className="text-xl font-bold text-[#3b0764] mb-4">
+                Prayer Service
+              </h3>
+
+              <div className="flex items-start gap-3 mb-6">
+                <FiClock className="w-4 h-4 text-[#c9a227] mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-medium text-[#3b0764]">
+                    Service Time
+                  </p>
+                  <p className="text-sm text-slate-600">5:30 PM</p>
+                </div>
+              </div>
+              <p className="text-sm text-slate-500">Onsite • Mabushi, Abuja</p>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Location */}
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -91,19 +138,19 @@ export default function ServicesPage() {
               <p className="text-[#c9a227] font-semibold text-sm tracking-widest uppercase mb-4">
                 Find Us
               </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#0b1d36] tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#3b0764] tracking-tight mb-6">
                 Our Location
               </h2>
               <div className="space-y-6 text-slate-600">
                 <div className="flex gap-4">
                   <FiMapPin className="w-5 h-5 text-[#c9a227] mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-[#0b1d36] mb-1">Address</p>
+                    <p className="font-semibold text-[#3b0764] mb-1">Address</p>
                     <p>Mabushi, Abuja, Federal Capital Territory, Nigeria</p>
                   </div>
                 </div>
                 <div>
-                  <p className="font-semibold text-[#0b1d36] mb-1">
+                  <p className="font-semibold text-[#3b0764] mb-1">
                     First Time?
                   </p>
                   <p>
@@ -115,7 +162,7 @@ export default function ServicesPage() {
               <div className="mt-8">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-2 bg-[#0b1d36] text-white font-medium px-7 py-3.5 rounded-full hover:bg-[#132f4c] transition-all"
+                  className="group inline-flex items-center gap-2 bg-[#3b0764] text-white font-medium px-7 py-3.5 rounded-full hover:bg-[#4c1d95] transition-all"
                 >
                   Contact Us for Directions
                   <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -123,16 +170,19 @@ export default function ServicesPage() {
               </div>
             </div>
             <div className="bg-slate-200 rounded-3xl h-72 sm:h-80 md:h-96 flex items-center justify-center">
-              <p className="text-slate-500 text-sm">Google Map Embed</p>
+              <p className="text-slate-500 text-sm">
+                Google Map will be added here
+              </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* What to Expect */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0b1d36] tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#3b0764] tracking-tight">
               What to Expect
             </h2>
           </div>
@@ -151,19 +201,19 @@ export default function ServicesPage() {
               {
                 icon: FiBookOpen,
                 title: "Sound Teaching",
-                desc: "The Word of God taught with clarity, power, and practical application.",
+                desc: "The Word of God taught with clarity, power and practical application.",
               },
               {
                 icon: FiUsers,
                 title: "Real Community",
-                desc: "A family where you can grow, connect, and walk in purpose.",
+                desc: "A family where you can grow, connect and walk in purpose.",
               },
             ].map((item) => (
               <div key={item.title} className="text-center p-6">
-                <div className="w-14 h-14 bg-[#0b1d36] rounded-2xl flex items-center justify-center mx-auto mb-5">
+                <div className="w-14 h-14 bg-[#3b0764] rounded-2xl flex items-center justify-center mx-auto mb-5">
                   <item.icon className="w-6 h-6 text-[#c9a227]" />
                 </div>
-                <h3 className="font-semibold text-[#0b1d36] mb-2">
+                <h3 className="font-semibold text-[#3b0764] mb-2">
                   {item.title}
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -175,21 +225,22 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 bg-[#0b1d36] relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1d36] via-[#0f2744] to-[#0b1d36]" />
+      {/* CTA */}
+      <section className="py-20 md:py-24 bg-[#3b0764] relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3b0764] via-[#4c1d95] to-[#3b0764]" />
         <div className="relative max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-6">
             We Can’t Wait to Meet You
           </h2>
-          <p className="text-slate-300 text-lg mb-10">
+          <p className="text-slate-200 text-lg mb-10">
             Come experience the presence of God with us this week.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/visit"
-              className="group inline-flex items-center justify-center gap-2 bg-[#c9a227] text-[#0b1d36] font-semibold px-8 py-4 rounded-full hover:bg-[#b8911f] transition-all"
+              className="group inline-flex items-center justify-center gap-2 bg-[#c9a227] text-[#3b0764] font-semibold px-8 py-4 rounded-full hover:bg-[#b8911f] transition-all"
             >
-              Plan Your Visit{" "}
+              Plan Your Visit
               <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
