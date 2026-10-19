@@ -146,7 +146,10 @@ export default function ServicesPage() {
                   <FiMapPin className="w-5 h-5 text-[#c9a227] mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-[#3b0764] mb-1">Address</p>
-                    <p>Mabushi, Abuja, Federal Capital Territory, Nigeria</p>
+                    <p>
+                      Exousia Auditorium 2 Domenico Gitto Street Mabushi,
+                      Besides Zeus Paradise Hotel Abuja
+                    </p>
                   </div>
                 </div>
                 <div>

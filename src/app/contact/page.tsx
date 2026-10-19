@@ -93,9 +93,9 @@ export default function ContactPage() {
                       Location
                     </h3>
                     <p className="text-slate-600">
-                      Mabushi, Abuja
+                      Exousia Auditorium 2 Domenico Gitto Street Mabushi,
                       <br />
-                      Federal Capital Territory, Nigeria
+                      Besides Zeus Paradise Hotel Abuja
                     </p>
                   </div>
                 </div>

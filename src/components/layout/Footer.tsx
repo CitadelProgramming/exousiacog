@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-5">
               <div className="relative w-11 h-11 flex-shrink-0">
                 <Image
-                  src="/logo.png"
+                  src="/Logo.png"
                   alt="Exousia Church of God"
                   fill
                   className="object-contain"

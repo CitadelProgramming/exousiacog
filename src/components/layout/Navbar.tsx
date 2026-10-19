@@ -27,7 +27,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
               <Image
-                src="/logo.png"
+                src="/Logo.png"
                 alt="Exousia Church of God"
                 fill
                 className="object-contain"

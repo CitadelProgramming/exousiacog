@@ -93,7 +93,8 @@ export default function Home() {
                     Location
                   </p>
                   <p className="text-sm font-semibold text-[#3b0764] mt-0.5">
-                    Mabushi, Abuja
+                    Exousia Auditorium 2 Domenico Gitto Street Mabushi, Besides
+                    Zeus Paradise Hotel Abuja
                   </p>
                 </div>
               </div>
